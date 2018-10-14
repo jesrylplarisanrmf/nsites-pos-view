@@ -1,0 +1,1369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6584B1D2-CDDA-4A10-BDFF-55A5496624C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NSites_V</RootNamespace>
+    <AssemblyName>NSites_V</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Main\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.PointOfService.Admin, Version=1.12.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Main\Microsoft.PointOfService.Admin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationObjects\Classes\POSs\Discount.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\AuditTrail.cs" />
+    <Compile Include="ApplicationObjects\Classes\POSs\ReturnedItem.cs" />
+    <Compile Include="ApplicationObjects\Classes\POSs\Cashier.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Category.cs" />
+    <Compile Include="ApplicationObjects\Classes\POSs\CashierPeriod.cs" />
+    <Compile Include="ApplicationObjects\Classes\POSs\POSTransaction.cs" />
+    <Compile Include="ApplicationObjects\Classes\POSs\POSTransactionDetail.cs" />
+    <Compile Include="ApplicationObjects\Classes\POSs\ModeOfPayment.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\InventoryType.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\InventoryGroup.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Inventory.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\InventoryDetail.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Stock.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Location.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Unit.cs" />
+    <Compile Include="ApplicationObjects\Classes\Generics\Common.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Customer.cs" />
+    <Compile Include="ApplicationObjects\Classes\Inventorys\Supplier.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\SystemConfiguration.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\User.cs" />
+    <Compile Include="ApplicationObjects\Classes\Systems\UserGroup.cs" />
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\InventoryTypeRpt.cs">
+      <DependentUpon>InventoryTypeRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\LocationRpt.cs">
+      <DependentUpon>LocationRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\UnitRpt.cs">
+      <DependentUpon>UnitRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\StockRpt.cs">
+      <DependentUpon>StockRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\DiscountDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\DiscountDetailUI.Designer.cs">
+      <DependentUpon>DiscountDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\ListFormPOSUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\ListFormPOSUI.Designer.cs">
+      <DependentUpon>ListFormPOSUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\MasterfileRpt\DiscountRpt.cs">
+      <DependentUpon>DiscountRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CloseCashierPeriodRpt1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CloseCashierPeriodRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\ItemReturnedRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemReturnedRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\ItemSoldRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ItemSoldRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\OrderSlipRpt1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderSlipRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\TransactionDetailListRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDetailListRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\ApplicationStarter.cs" />
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\CategoryDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\CategoryDetailUI.Designer.cs">
+      <DependentUpon>CategoryDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\CustomerDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\CustomerDetailUI.Designer.cs">
+      <DependentUpon>CustomerDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\ListFormInventoryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\ListFormInventoryUI.Designer.cs">
+      <DependentUpon>ListFormInventoryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\CustomerRpt.cs">
+      <DependentUpon>CustomerRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\CategoryRpt.cs">
+      <DependentUpon>CategoryRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\InventoryGroupRpt.cs">
+      <DependentUpon>InventoryGroupRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\SupplierRpt.cs">
+      <DependentUpon>SupplierRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockAdjustmentRpt.cs">
+      <DependentUpon>StockAdjustmentRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferInRpt.cs">
+      <DependentUpon>StockTransferInRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferOutRpt.cs">
+      <DependentUpon>StockTransferOutRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockWithdrawalRpt.cs">
+      <DependentUpon>StockWithdrawalRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockReceivingRpt.cs">
+      <DependentUpon>StockReceivingRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\InventoryCancelReasonUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\InventoryCancelReasonUI.Designer.cs">
+      <DependentUpon>InventoryCancelReasonUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\InventoryGroupDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\InventoryGroupDetailUI.Designer.cs">
+      <DependentUpon>InventoryGroupDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\InventoryTypeDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\InventoryTypeDetailUI.Designer.cs">
+      <DependentUpon>InventoryTypeDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\LocationDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\LocationDetailUI.Designer.cs">
+      <DependentUpon>LocationDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\CashierDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\CashierDetailUI.Designer.cs">
+      <DependentUpon>CashierDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\ModeOfPaymentDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\ModeOfPaymentDetailUI.Designer.cs">
+      <DependentUpon>ModeOfPaymentDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\StockDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\StockDetailUI.Designer.cs">
+      <DependentUpon>StockDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\SupplierDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\SupplierDetailUI.Designer.cs">
+      <DependentUpon>SupplierDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\UnitDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\UnitDetailUI.Designer.cs">
+      <DependentUpon>UnitDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\CashierPeriodsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\CashierPeriodsUI.Designer.cs">
+      <DependentUpon>CashierPeriodsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport1.cs">
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReorderLevelUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReorderLevelUI.Designer.cs">
+      <DependentUpon>ReorderLevelUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\MasterfileRpt\CashierRpt.cs">
+      <DependentUpon>CashierRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\MasterfileRpt\ModeOfPaymentRpt.cs">
+      <DependentUpon>ModeOfPaymentRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\POSTransactionsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\POSTransactionsUI.Designer.cs">
+      <DependentUpon>POSTransactionsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\ReturnedItemsRpt.cs">
+      <DependentUpon>ReturnedItemsRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\SalesInventoryByCategoryRpt.cs">
+      <DependentUpon>SalesInventoryByCategoryRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\SalesInventoryByCustomerRpt.cs">
+      <DependentUpon>SalesInventoryByCustomerRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\SalesInventoryRpt.cs">
+      <DependentUpon>SalesInventoryRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\CashierPeriodsRpt.cs">
+      <DependentUpon>CashierPeriodsRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\ReorderLevelByGroupRpt.cs">
+      <DependentUpon>ReorderLevelByGroupRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockCardRpt.cs">
+      <DependentUpon>StockCardRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryByLocationByGroupRpt.cs">
+      <DependentUpon>StockInventoryByLocationByGroupRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryByLocationRpt.cs">
+      <DependentUpon>StockInventoryByLocationRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryByGroupRpt.cs">
+      <DependentUpon>StockInventoryByGroupRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\ReorderLevelRpt.cs">
+      <DependentUpon>ReorderLevelRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryRpt.cs">
+      <DependentUpon>StockInventoryRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReturnedItemsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReturnedItemsUI.Designer.cs">
+      <DependentUpon>ReturnedItemsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\SalesInventoryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\SalesInventoryUI.Designer.cs">
+      <DependentUpon>SalesInventoryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\StockCardUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\StockCardUI.Designer.cs">
+      <DependentUpon>StockCardUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\StockInventoryUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\StockInventoryUI.Designer.cs">
+      <DependentUpon>StockInventoryUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CashierPeriodReturnedItemRpt.cs">
+      <DependentUpon>CashierPeriodReturnedItemRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CashierPeriodStockSoldRpt.cs">
+      <DependentUpon>CashierPeriodStockSoldRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\OrderSlip2Rpt.cs">
+      <DependentUpon>OrderSlip2Rpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferInDetailRpt.cs">
+      <DependentUpon>StockTransferInDetailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferOutDetailRpt.cs">
+      <DependentUpon>StockTransferOutDetailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockReceivingDetailRpt.cs">
+      <DependentUpon>StockReceivingDetailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockAdjustmentDetailRpt.cs">
+      <DependentUpon>StockAdjustmentDetailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockWithdrawalDetailRpt.cs">
+      <DependentUpon>StockWithdrawalDetailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\OrderSlipShortRpt.cs">
+      <DependentUpon>OrderSlipShortRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CashierPeriodSummaryRpt.cs">
+      <DependentUpon>CashierPeriodSummaryRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\AddDiscountUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\AddDiscountUI.Designer.cs">
+      <DependentUpon>AddDiscountUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\FindCustomerListUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\FindCustomerListUI.Designer.cs">
+      <DependentUpon>FindCustomerListUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\FindModeOfPaymentUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\FindModeOfPaymentUI.Designer.cs">
+      <DependentUpon>FindModeOfPaymentUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\SoftwareLicenseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\SoftwareLicenseUI.Designer.cs">
+      <DependentUpon>SoftwareLicenseUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\DatabaseBackupRestoreUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\DatabaseBackupRestoreUI.Designer.cs">
+      <DependentUpon>DatabaseBackupRestoreUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserGroupRpt.cs">
+      <DependentUpon>UserGroupRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserRpt.cs">
+      <DependentUpon>UserRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\TechnicalUpdateUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\TechnicalUpdateUI.Designer.cs">
+      <DependentUpon>TechnicalUpdateUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\CloseCashierPeriodUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\CloseCashierPeriodUI.Designer.cs">
+      <DependentUpon>CloseCashierPeriodUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\LookUpStockTransferOutUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\LookUpStockTransferOutUI.Designer.cs">
+      <DependentUpon>LookUpStockTransferOutUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\OpenCasherPeriodUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\OpenCasherPeriodUI.Designer.cs">
+      <DependentUpon>OpenCasherPeriodUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\OtherFunctionsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\OtherFunctionsUI.Designer.cs">
+      <DependentUpon>OtherFunctionsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\RenderUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\RenderUI.Designer.cs">
+      <DependentUpon>RenderUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\ReturnedItemDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\ReturnedItemDetailUI.Designer.cs">
+      <DependentUpon>ReturnedItemDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\SecurityUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\SecurityUI.Designer.cs">
+      <DependentUpon>SecurityUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockAdjustmentDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockAdjustmentDetailUI.Designer.cs">
+      <DependentUpon>StockAdjustmentDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockAdjustmentItemDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockAdjustmentItemDetailUI.Designer.cs">
+      <DependentUpon>StockAdjustmentItemDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\StockQtyUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\StockQtyUI.Designer.cs">
+      <DependentUpon>StockQtyUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockReceivingDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockReceivingDetailUI.Designer.cs">
+      <DependentUpon>StockReceivingDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockReceivingItemDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockReceivingItemDetailUI.Designer.cs">
+      <DependentUpon>StockReceivingItemDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferInDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferInDetailUI.Designer.cs">
+      <DependentUpon>StockTransferInDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferInItemDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferInItemDetailUI.Designer.cs">
+      <DependentUpon>StockTransferInItemDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferOutDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferOutDetailUI.Designer.cs">
+      <DependentUpon>StockTransferOutDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferOutItemDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferOutItemDetailUI.Designer.cs">
+      <DependentUpon>StockTransferOutItemDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockWithdrawalDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockWithdrawalDetailUI.Designer.cs">
+      <DependentUpon>StockWithdrawalDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockWithdrawalItemDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockWithdrawalItemDetailUI.Designer.cs">
+      <DependentUpon>StockWithdrawalItemDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\POSOrderingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\POSs\Transactions\POSOrderingUI.Designer.cs">
+      <DependentUpon>POSOrderingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailUI.Designer.cs">
+      <DependentUpon>AuditTrailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRpt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailRpt.cs">
+      <DependentUpon>AuditTrailRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegalLandscape.cs">
+      <DependentUpon>CrystalReportLegalLandscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLandscape.cs">
+      <DependentUpon>CrystalReportLandscape.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegal.cs">
+      <DependentUpon>CrystalReportLegal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\ReportViewerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Generics\ReportViewerUI.Designer.cs">
+      <DependentUpon>ReportViewerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\LogInUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\LogInUI.designer.cs">
+      <DependentUpon>LogInUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\ListFormSystemUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\ListFormSystemUI.designer.cs">
+      <DependentUpon>ListFormSystemUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\MDIUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\MDIUI.designer.cs">
+      <DependentUpon>MDIUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ChangeUserPasswordUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ChangeUserPasswordUI.designer.cs">
+      <DependentUpon>ChangeUserPasswordUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ScreenSaverUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\ScreenSaverUI.designer.cs">
+      <DependentUpon>ScreenSaverUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\SystemConfigurationUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\SystemConfigurationUI.designer.cs">
+      <DependentUpon>SystemConfigurationUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\UnlockScreenUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\UnlockScreenUI.designer.cs">
+      <DependentUpon>UnlockScreenUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupListUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupListUI.Designer.cs">
+      <DependentUpon>UserGroupListUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupDetailUI.designer.cs">
+      <DependentUpon>UserGroupDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserDetailUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserDetailUI.designer.cs">
+      <DependentUpon>UserDetailUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockAdjustmentUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockAdjustmentUI.Designer.cs">
+      <DependentUpon>StockAdjustmentUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockReceivingUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockReceivingUI.Designer.cs">
+      <DependentUpon>StockReceivingUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockTransferInUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockTransferInUI.Designer.cs">
+      <DependentUpon>StockTransferInUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockTransferOutUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockTransferOutUI.Designer.cs">
+      <DependentUpon>StockTransferOutUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockWithdrawalUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockWithdrawalUI.Designer.cs">
+      <DependentUpon>StockWithdrawalUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\ErrorMessageUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\ErrorMessageUI.Designer.cs">
+      <DependentUpon>ErrorMessageUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\GmailHandler.cs" />
+    <Compile Include="Global\CryptorEngine.cs" />
+    <Compile Include="Global\DataTimePickerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\DataTimePickerUI.designer.cs">
+      <DependentUpon>DataTimePickerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\GlobalClassHandler.cs" />
+    <Compile Include="Global\GlobalFunctions.cs" />
+    <Compile Include="Global\GlobalVariables.cs" />
+    <Compile Include="Global\LookUpValueUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\LookUpValueUI.designer.cs">
+      <DependentUpon>LookUpValueUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\MessageBoxInputUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\MessageBoxInputUI.designer.cs">
+      <DependentUpon>MessageBoxInputUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\MessageBoxUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\MessageBoxUI.designer.cs">
+      <DependentUpon>MessageBoxUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\OpenCashDrawer.cs" />
+    <Compile Include="Global\SearchesUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\SearchesUI.Designer.cs">
+      <DependentUpon>SearchesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\SearchUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\SearchUI.designer.cs">
+      <DependentUpon>SearchUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\InventoryTypeRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventoryTypeRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\LocationRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LocationRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\UnitRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UnitRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\StockRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\DiscountDetailUI.resx">
+      <DependentUpon>DiscountDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\ListFormPOSUI.resx">
+      <DependentUpon>ListFormPOSUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\MasterfileRpt\DiscountRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DiscountRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CloseCashierPeriodRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CloseCashierPeriodRpt1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\ItemReturnedRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemReturnedRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\ItemSoldRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ItemSoldRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\OrderSlipRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderSlipRpt1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\TransactionDetailListRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TransactionDetailListRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\CategoryDetailUI.resx">
+      <DependentUpon>CategoryDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\CustomerDetailUI.resx">
+      <DependentUpon>CustomerDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\ListFormInventoryUI.resx">
+      <DependentUpon>ListFormInventoryUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\CustomerRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\CategoryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CategoryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\InventoryGroupRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventoryGroupRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\MasterfilesRpt\SupplierRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupplierRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockAdjustmentRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockAdjustmentRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferInRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockTransferInRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferOutRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockTransferOutRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockWithdrawalRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockWithdrawalRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockReceivingRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockReceivingRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\InventoryCancelReasonUI.resx">
+      <DependentUpon>InventoryCancelReasonUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\InventoryGroupDetailUI.resx">
+      <DependentUpon>InventoryGroupDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\InventoryTypeDetailUI.resx">
+      <DependentUpon>InventoryTypeDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\LocationDetailUI.resx">
+      <DependentUpon>LocationDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\CashierDetailUI.resx">
+      <DependentUpon>CashierDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Masterfiles\ModeOfPaymentDetailUI.resx">
+      <DependentUpon>ModeOfPaymentDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\StockDetailUI.resx">
+      <DependentUpon>StockDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\SupplierDetailUI.resx">
+      <DependentUpon>SupplierDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Masterfiles\UnitDetailUI.resx">
+      <DependentUpon>UnitDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\CashierPeriodsUI.resx">
+      <DependentUpon>CashierPeriodsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReorderLevelUI.resx">
+      <DependentUpon>ReorderLevelUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\MasterfileRpt\CashierRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashierRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\MasterfileRpt\ModeOfPaymentRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ModeOfPaymentRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\POSTransactionsUI.resx">
+      <DependentUpon>POSTransactionsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\ReturnedItemsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReturnedItemsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\SalesInventoryByCategoryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesInventoryByCategoryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\SalesInventoryByCustomerRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesInventoryByCustomerRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\SalesInventoryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesInventoryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReportRpt\CashierPeriodsRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashierPeriodsRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\ReorderLevelByGroupRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReorderLevelByGroupRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockCardRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockCardRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryByLocationByGroupRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockInventoryByLocationByGroupRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryByLocationRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockInventoryByLocationRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryByGroupRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockInventoryByGroupRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\ReorderLevelRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReorderLevelRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\ReportsRpt\StockInventoryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockInventoryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\ReturnedItemsUI.resx">
+      <DependentUpon>ReturnedItemsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\SalesInventoryUI.resx">
+      <DependentUpon>SalesInventoryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\StockCardUI.resx">
+      <DependentUpon>StockCardUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\StockInventoryUI.resx">
+      <DependentUpon>StockInventoryUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CashierPeriodReturnedItemRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashierPeriodReturnedItemRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CashierPeriodStockSoldRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashierPeriodStockSoldRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\OrderSlip2Rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderSlip2Rpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferInDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockTransferInDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockTransferOutDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockTransferOutDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockReceivingDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockReceivingDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockAdjustmentDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockAdjustmentDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Reports\TransactionsRpt\StockWithdrawalDetailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StockWithdrawalDetailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\OrderSlipShortRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrderSlipShortRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Reports\TransactionRpt\CashierPeriodSummaryRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CashierPeriodSummaryRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\AddDiscountUI.resx">
+      <DependentUpon>AddDiscountUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\FindCustomerListUI.resx">
+      <DependentUpon>FindCustomerListUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\FindModeOfPaymentUI.resx">
+      <DependentUpon>FindModeOfPaymentUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\SoftwareLicenseUI.resx">
+      <DependentUpon>SoftwareLicenseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\DatabaseBackupRestoreUI.resx">
+      <DependentUpon>DatabaseBackupRestoreUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserGroupRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserGroupRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\ReportRpt\UserRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>UserRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\TechnicalUpdateUI.resx">
+      <DependentUpon>TechnicalUpdateUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\CloseCashierPeriodUI.resx">
+      <DependentUpon>CloseCashierPeriodUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\LookUpStockTransferOutUI.resx">
+      <DependentUpon>LookUpStockTransferOutUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\OpenCasherPeriodUI.resx">
+      <DependentUpon>OpenCasherPeriodUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\OtherFunctionsUI.resx">
+      <DependentUpon>OtherFunctionsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\RenderUI.resx">
+      <DependentUpon>RenderUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\ReturnedItemDetailUI.resx">
+      <DependentUpon>ReturnedItemDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\SecurityUI.resx">
+      <DependentUpon>SecurityUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockAdjustmentDetailUI.resx">
+      <DependentUpon>StockAdjustmentDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockAdjustmentItemDetailUI.resx">
+      <DependentUpon>StockAdjustmentItemDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\Details\StockQtyUI.resx">
+      <DependentUpon>StockQtyUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockReceivingDetailUI.resx">
+      <DependentUpon>StockReceivingDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockReceivingItemDetailUI.resx">
+      <DependentUpon>StockReceivingItemDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferInDetailUI.resx">
+      <DependentUpon>StockTransferInDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferInItemDetailUI.resx">
+      <DependentUpon>StockTransferInItemDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferOutDetailUI.resx">
+      <DependentUpon>StockTransferOutDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockTransferOutItemDetailUI.resx">
+      <DependentUpon>StockTransferOutItemDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockWithdrawalDetailUI.resx">
+      <DependentUpon>StockWithdrawalDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\Details\StockWithdrawalItemDetailUI.resx">
+      <DependentUpon>StockWithdrawalItemDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\POSs\Transactions\POSOrderingUI.resx">
+      <DependentUpon>POSOrderingUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailUI.resx">
+      <DependentUpon>AuditTrailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Reports\AuditTrailRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AuditTrailRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegalLandscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLegalLandscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLandscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLandscape.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReportLegal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportLegal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\CrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Generics\ReportViewerUI.resx">
+      <DependentUpon>ReportViewerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\LogInUI.resx">
+      <DependentUpon>LogInUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\ListFormSystemUI.resx">
+      <DependentUpon>ListFormSystemUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\MDIUI.resx">
+      <DependentUpon>MDIUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\ChangeUserPasswordUI.resx">
+      <DependentUpon>ChangeUserPasswordUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\ScreenSaverUI.resx">
+      <DependentUpon>ScreenSaverUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\SystemConfigurationUI.resx">
+      <DependentUpon>SystemConfigurationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\UnlockScreenUI.resx">
+      <DependentUpon>UnlockScreenUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupListUI.resx">
+      <DependentUpon>UserGroupListUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserGroupDetailUI.resx">
+      <DependentUpon>UserGroupDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Systems\Masterfiles\UserDetailUI.resx">
+      <DependentUpon>UserDetailUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockAdjustmentUI.resx">
+      <DependentUpon>StockAdjustmentUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockReceivingUI.resx">
+      <DependentUpon>StockReceivingUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockTransferInUI.resx">
+      <DependentUpon>StockTransferInUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockTransferOutUI.resx">
+      <DependentUpon>StockTransferOutUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationObjects\UserInterfaces\Inventorys\Transactions\StockWithdrawalUI.resx">
+      <DependentUpon>StockWithdrawalUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\DataTimePickerUI.resx">
+      <DependentUpon>DataTimePickerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\ErrorMessageUI.resx">
+      <DependentUpon>ErrorMessageUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\LookUpValueUI.resx">
+      <DependentUpon>LookUpValueUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\MessageBoxInputUI.resx">
+      <DependentUpon>MessageBoxInputUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\MessageBoxUI.resx">
+      <DependentUpon>MessageBoxUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\SearchesUI.resx">
+      <DependentUpon>SearchesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\SearchUI.resx">
+      <DependentUpon>SearchUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.xsc">
+      <DependentUpon>DataSetRpt.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRpt.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ApplicationObjects\UserInterfaces\Generics\DataSetRpt.xss">
+      <DependentUpon>DataSetRpt.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nsites_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
